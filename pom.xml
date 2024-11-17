@@ -1,9 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.para-bank</groupId>
-  <artifactId>parabank-onlinebanking-automation</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.para-bank</groupId>
+	<artifactId>parabank-onlinebanking-automation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -20,7 +32,7 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>4.7.1</version>
-			
+
 		</dependency>
 		<dependency>
 			<groupId>net.masterthought</groupId>
@@ -31,7 +43,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.4.0</version>
-			
+
 		</dependency>
 
 	</dependencies>
@@ -51,7 +63,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M7</version>
 				<configuration>
-				 <testFailureIgnore>true</testFailureIgnore>
+					<testFailureIgnore>true</testFailureIgnore>
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
@@ -70,7 +82,8 @@
 						</goals>
 						<configuration>
 							<projectName>ExecutionResult</projectName>
-							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+							<outputDirectory>
+								${project.build.directory}/cucumber-report-html</outputDirectory>
 							<inputDirectory>${project.build.directory}</inputDirectory>
 							<jsonFiles>
 								<param>**/*.json</param>
