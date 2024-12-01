@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.asserts.SoftAssert;
 
 public class MenuBar {
 	
@@ -23,12 +24,25 @@ public class MenuBar {
 	
 		System.out.println("menu bar total name = "+menuBar.size() );
 		
-		for(int i=0;i<menuBar.size();i++) {
+		
+		
+		List<String> myList = new ArrayList<>();
+		
+		for(int i=0;i<menuBar.size();i++) {//start
 			
 			System.out.println(menuBar.get(i).getText());
+			myList.add(menuBar.get(i).getText());
 			
-		}
+		}//end
 	
+		System.out.println("All value in my list = "+myList);//all value store in new list
+		
+		SoftAssert sf =new SoftAssert();
+		sf.assertTrue(myList.contains("Pharmacy"));
+		sf.assertTrue(myList.contains("City"));
+		
+		driver.quit();
+		sf.assertAll();
 	}
 
 }
