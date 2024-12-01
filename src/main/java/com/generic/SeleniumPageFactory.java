@@ -28,6 +28,9 @@ public class SeleniumPageFactory {
 	@FindBy(xpath="//*[text()='Please enter a username and password.']")
 	private WebElement errorMsgWithNullCredential;
 	
+	@FindBy(css="input. oxd-input oxd-input--active")
+	private WebElement userlocatorwithCSS;
+	
 	public WebElement getUserName() {
 		return UserName;
 	}
